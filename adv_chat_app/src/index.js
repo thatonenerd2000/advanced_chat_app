@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 
+//Components
+import MainScreen from "./front_comp/MainScreen.jsx"
+
 const Main = () => {
   return (
     <>
-      <h1>It works!</h1>
+      <MainScreen/>
     </>
   );
 }

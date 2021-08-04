@@ -1,0 +1,66 @@
+// *{
+//     border:1px solid red;
+// }
+
+//variables
+$hexLightGrey:#D3D3D3;
+$hexReceive:#909090;
+$hexSent:#51A0D5;
+
+#MainScreen{
+    min-height:100vh;
+    max-width:100vw;
+    padding: 0 20px;
+    background-color:$hexLightGrey
+}
+
+.bubble_container.sent {
+    text-align: right;
+}
+.bubble_container.receive {
+    text-align: left;
+}
+
+.bubble {
+    display: inline-block;
+    max-width:40vw;
+    // width: 20vw;
+    padding: 10px;
+    // margin-bottom: 0px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #FFFFFF;
+    clear: both;
+}
+
+.bubble:first-child {
+    margin-top: 20px;
+}
+
+.bubble p {
+    margin: 0;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+
+.bubble.sent{
+    background-color:$hexSent;
+    text-align:right;
+    // float:right;
+}
+.bubble.receive{
+    background-color:$hexReceive;
+    // float:left;
+}
+
+#inputText{
+    width:96vw;
+}
+
+#inputContainer{
+    display:inline-block;
+    padding: 5px;
+    position:fixed;
+    left:0;
+    bottom: 0;
+    border-radius: 10px;
+}
