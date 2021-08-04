@@ -8,9 +8,8 @@ import InputMessage from './InputMessage';
 const MainScreen = () => {
     return(
         <>
-            <h1>Chatsnap 👍</h1>
             <div id="MainScreen">
-                <ChatBubble MessageType="receive">This is the very beginning of your chat. This is the very beginning of your chat.</ChatBubble>
+                <div className="beginning">This is the very beginning of your chat.</div>
                 <ChatBubble MessageType="sent">This got sent</ChatBubble>
                 <ChatBubble MessageType="sent">Another Sent Message</ChatBubble>
                 <ChatBubble MessageType="receive">Received this one</ChatBubble>
