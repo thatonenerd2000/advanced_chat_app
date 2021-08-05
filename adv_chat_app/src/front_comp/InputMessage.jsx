@@ -1,14 +1,26 @@
 import React,{useState,useEffect,useContext} from 'react';
+import socketClient  from "socket.io-client";
 import "./front_comp_style.scss"
 
 //Icon
 import {AiOutlineSend} from "react-icons/ai";
 
 const InputMessage = () => {
+    //Socket
+    const endpoint = "localhost:3001"
+    var socket = socketClient (endpoint);
+    socket.on('connection', () => {
+        console.log(`I'm connected with the back-end`);
+    });
+
     return (
         <div id="inputContainer">
-            <input type="text" id="inputText" placeholder="Wake up to reality! Nothing ever goes as planned in this accursed world. The longer you live, the more you realize that the only things that truly exist in this reality are merely pain. suffering and futility. Listen, everywhere you look in this world, wherever there is light, there will always be shadows to be found as well. As long as there is a concept of victors, the vanquished will also exist. The selfish intent of wanting to preserve peace, initiates war. and hatred is born in order to protect love. There are nexuses causal relationships that cannot be separated - Madara Uchiha,"></input>
-            <button><AiOutlineSend style={{color:"blue"}}/></button>
+            <input type="text" id="inputText" placeholder="Input message here..."></input>
+            <button onClick={()=>{
+                let message = document.getElementById("inputText")
+                socket.emit("send_message" , message.value);
+                message.value = "";
+            }}><AiOutlineSend style={{color:"blue"}}/></button>
         </div>
     )
 }

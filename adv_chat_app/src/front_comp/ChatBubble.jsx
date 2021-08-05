@@ -14,7 +14,7 @@ const ChatBubble = (props) => {
             </img>
 
             <div className={"bubble " + props.MessageType}>
-                <p>{props.children}</p>
+                <p>{props.Message}</p>
             </div>
 
             {/* Render after the chat */}

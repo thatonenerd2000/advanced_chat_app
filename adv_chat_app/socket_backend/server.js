@@ -18,7 +18,8 @@ server.listen(port, ()=>{
 
 io.on('connection', (socket) => {
     console.log('a user connected');
-    socket.on('disconnect', () => {
-      console.log('user disconnected');
-    });
+    socket.emit('connection', null);
+    socket.on("send_message",(msg)=>{
+        socket.emit("send_message_server",(msg))
+    })
 });
