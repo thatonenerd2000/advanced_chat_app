@@ -32,6 +32,11 @@ $hexMod:rgb(110, 207, 162);
     text-align: left;
 }
 
+.bubble_container p {
+    text-align:left;
+    line-height:25px;
+}
+
 .bubble {
     display: inline-block;
     max-width:40vw;
@@ -41,6 +46,7 @@ $hexMod:rgb(110, 207, 162);
     border-radius: 10px;
     box-shadow: 2px 2px 2px #FFFFFF;
     clear: both;
+    margin:5px;
 }
 
 .bubble:first-child {
@@ -75,7 +81,7 @@ $hexMod:rgb(110, 207, 162);
 #inputContainer{
     padding: 5px;
     position:fixed;
-    left:0;
+    left:0%;
     bottom: 0;
     border-radius: 10px;
     margin: 0 auto;
@@ -91,4 +97,19 @@ $hexMod:rgb(110, 207, 162);
 #sentAvatar{
     height:30px;
     border-radius: 100%;
+}
+
+#receiveAvatar{
+    height:30px;
+    border-radius: 100%;
+}
+
+.avatar{
+    vertical-align:middle;
+    margin:5px;
+}
+
+#inputContainer{
+    width: 100vw;
+    text-align: center;
 }
