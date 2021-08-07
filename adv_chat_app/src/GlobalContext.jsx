@@ -11,7 +11,7 @@ const GlobalContext = (props) => {
 
     useEffect(()=>{
         socket.on("connect", ()=>{
-            // console.log("A user has connected in GlobalConfig and his socket id is: " + socket.id)
+
             setUid(socket.id)
         })
     },[])

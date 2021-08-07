@@ -15,7 +15,7 @@ const InputMessage = () => {
             <input type="text" id="inputText" placeholder="Input message here..."></input>
             <button onClick={()=>{
                 let message = document.getElementById("inputText")
-                socket.emit("send_message-client" , message.value);
+                socket.emit("send_message-client" , {senderMessage:message.value, senderUid:socket.id});
                 message.value = "";
             }}><AiOutlineSend style={{color:"blue"}}/></button>
         </div>

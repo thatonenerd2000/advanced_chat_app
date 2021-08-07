@@ -18,7 +18,7 @@ server.listen(port, ()=>{
 
 io.on('connection', (socket) => {
     console.log('a user connected');
-    socket.on('send_message-client',(msg) =>{
-        io.emit('send_message-server',msg)
+    socket.on('send_message-client',(data) =>{
+        io.emit('send_message-server',{Message:data.senderMessage, senderUid:data.senderUid})
     })
 });

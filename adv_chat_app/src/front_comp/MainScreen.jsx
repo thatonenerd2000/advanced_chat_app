@@ -15,22 +15,27 @@ const MainScreen = () => {
     const [currentUid,setCurrentUid] = useState("")
 
     useEffect(()=>{
-        socket.on('send_message-server', (msg) => {
-            pushMessage(oldMessages => [...oldMessages,msg])
+        socket.on('send_message-server', (data) => {
+            pushMessage(oldMessages => [...oldMessages,{message:data.Message,uid:data.senderUid}])
         });
         socket.on("connect",()=>{
             setCurrentUid(socket.id)
         });
     },[])
 
+    console.log(messages)
+
     return(
         <>
             <div id="MainScreen">
                 <div className="beginning">This is the very beginning of your chat.</div>
                 {messages.map(data=>{
-                    //If the browser socket Id is the same as the one sent by Global Config, its the same user
-                    if(Globalconfig.uid == currentUid){
-                        return<ChatBubble MessageType="sent" Message={data}/>
+                    // If the browser socket Id is the same as the one sent by Global Config, its the same user
+                    if(currentUid == data.uid){
+                        return<ChatBubble MessageType="sent" Message={data.message}/>
+                    }
+                    else{
+                        return<ChatBubble MessageType="receive" Message={data.message}/>
                     }
                 })}
 
