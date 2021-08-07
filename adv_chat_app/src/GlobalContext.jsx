@@ -18,8 +18,9 @@ const GlobalContext = (props) => {
 
     return(
         <ConfigContext.Provider value = {{
+            //Socket informations
             socketState:socket,
-            uid:UID
+            uid:UID,
         }}>
             {props.children}
         </ConfigContext.Provider>
