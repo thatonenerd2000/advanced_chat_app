@@ -9,16 +9,13 @@ const InputMessage = () => {
     //Socket
     const endpoint = "localhost:3001"
     var socket = socketClient (endpoint);
-    socket.on('connection', () => {
-        console.log(`I'm connected with the back-end`);
-    });
-
     return (
         <div id="inputContainer">
             <input type="text" id="inputText" placeholder="Input message here..."></input>
             <button onClick={()=>{
                 let message = document.getElementById("inputText")
-                socket.emit("send_message" , message.value);
+                socket.emit("send_message-client" , message.value);
+                socket.emit("send_messageId-client" , socket.id)
                 message.value = "";
             }}><AiOutlineSend style={{color:"blue"}}/></button>
         </div>
