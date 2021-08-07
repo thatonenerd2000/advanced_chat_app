@@ -21,7 +21,4 @@ io.on('connection', (socket) => {
     socket.on('send_message-client',(msg) =>{
         io.emit('send_message-server',msg)
     })
-    socket.on('send_messageId-client',(uid) => {
-        io.emit('send_messageId-server',uid)
-    })
 });
