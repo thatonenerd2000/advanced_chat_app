@@ -12,7 +12,8 @@ $hexMod:rgb(110, 207, 162);
     min-height:100vh;
     max-width:100vw;
     padding: 20px;
-    background-color:$hexLightGrey
+    background-color:$hexLightGrey;
+    overflow-x:hidden;
 }
 
 .beginning {

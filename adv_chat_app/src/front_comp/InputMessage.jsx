@@ -13,9 +13,9 @@ const InputMessage = () => {
 
     return (
         <div id="inputContainer">
-            <input type="text" id="inputText" placeholder="Input message here..." onInput={()=>{
+            <input type="text" id="inputText" placeholder="Input message here..." onKeyDown={()=>{
                 socket.emit("send_messageTypingStarted-client" , socket.id)
-                setTimeout(()=>socket.emit("send_messageTypingStopped-client"), 2000);
+                setTimeout(()=>socket.emit("send_messageTypingStopped-client"), 4000);
             }}></input>
             <button onClick={()=>{
                 let message = document.getElementById("inputText")
